@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Simulador de Juros Compostos</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Simulador de Investimentos</h1>
+        <p>Calcule a Evolução do seu Patrimônio com Juros Compostos</p>
+      </header>
+
+      <section id="area-simulador">
+        <form id="form-investimento">
+          <fieldset>
+            <legend>Parâmetros de Simulação</legend>
+
+            <div class="campo">
+              <label for="valor-inicial">Investimento Inicial (R$)</label>
+              <input
+                type="number"
+                id="valor-inicial"
+                placeholder="Ex: 1000"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="aporte-mensal">Aporte Mensal (R$)</label>
+              <input
+                type="number"
+                id="aporte-mensal"
+                placeholder="Ex: 200"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="taxa-juros">Taxa de Juros</label>
+              <input
+                type="number"
+                id="taxa-juros"
+                step="0.01"
+                placeholder="Ex: 0.08"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="tempo-meses">Período (Meses) </label>
+              <input
+                type="number"
+                id="tempo-meses"
+                placeholder="Ex: 12"
+                required
+              />
+            </div>
+
+            <button id="btn-calcular" type="submit">Calcular Evolução</button>
+            <button id="btn-limpar" type="button">Limpar Dados</button>
+          </fieldset>
+        </form>
+
+        <section id="area-resultado" class="escondido">
+          <h2>Evolução do seu Patrimônio</h2>
+
+          <div id="resumo-grafico" class="escondido">
+            <div class="info-grafico">
+              <span id="legenda-investido"> Valor Investido: R$ 0.00 </span>
+              <span id="legenda-juros"> Juros Ganhos: R$ 0.00 </span>
+            </div>
+            <div class="barra-grafico">
+              <div id="barra-investido"></div>
+              <div id="barra-juros"></div>
+            </div>
+          </div>
+
+          <div class="container-tabela">
+            <table id="tabela-evolucao">
+              <thead>
+                <tr>
+                  <th>Mês</th>
+                  <th>Juros Ganhos</th>
+                  <th>Total Acumulado</th>
+                </tr>
+              </thead>
+              <tbody id="corpo-tabela"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
