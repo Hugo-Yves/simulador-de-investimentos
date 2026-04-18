@@ -7,7 +7,7 @@ const graficoVisivel = localStorage.getItem("graficoVisivel");
 
 const valorInicialSalvo = localStorage.getItem("valorInicial");
 const aporteMensalSalvo = localStorage.getItem("aporteMensal");
-const taxaJurosSalva = localStorage.getItem("taxaJuros");
+const taxaJurosSalva = localStorage.getItem("taxa-juros");
 const tempoMesesSalvo = localStorage.getItem("tempoMeses");
 
 if (valorInicialSalvo)
