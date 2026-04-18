@@ -32,15 +32,16 @@ const formSimulador = document.getElementById("form-investimento");
 
 formSimulador.addEventListener("submit", (event) => {
   event.preventDefault();
-  localStorage.setItem("valorInicial", valorInicial);
-  localStorage.setItem("aporteMensal", aporteMensal);
-  localStorage.setItem("taxa-juros", taxaJuros);
-  localStorage.setItem("tempoMeses", tempoMeses);
 
   const valorInicial = document.getElementById("valor-inicial").value;
   const aporteMensal = document.getElementById("aporte-mensal").value;
   const taxaJuros = document.getElementById("taxa-juros").value;
   const tempoMeses = document.getElementById("tempo-meses").value;
+
+  localStorage.setItem("valorInicial", valorInicial);
+  localStorage.setItem("aporteMensal", aporteMensal);
+  localStorage.setItem("taxa-juros", taxaJuros);
+  localStorage.setItem("tempoMeses", tempoMeses);
 
   let capital = parseFloat(valorInicial);
   const aporte = parseFloat(aporteMensal);
