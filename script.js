@@ -5,6 +5,20 @@ const tabelaSalva = localStorage.getItem("memoriaTabela");
 const graficoSalvo = localStorage.getItem("memoriaGrafico");
 const graficoVisivel = localStorage.getItem("graficoVisivel");
 
+const valorInicialSalvo = localStorage.getItem("valorInicial");
+const aporteMensalSalvo = localStorage.getItem("aporteMensal");
+const taxaJurosSalva = localStorage.getItem("taxaJuros");
+const tempoMesesSalvo = localStorage.getItem("tempoMeses");
+
+if (valorInicialSalvo)
+  document.getElementById("valor-inicial").value = valorInicialSalvo;
+if (aporteMensalSalvo)
+  document.getElementById("aporte-mensal").value = aporteMensalSalvo;
+if (taxaJurosSalva)
+  document.getElementById("taxa-juros").value = taxaJurosSalva;
+if (tempoMesesSalvo)
+  document.getElementById("tempo-meses").value = tempoMesesSalvo;
+
 if (tabelaSalva) {
   corpoTabela.innerHTML = tabelaSalva;
 }
@@ -18,6 +32,11 @@ const formSimulador = document.getElementById("form-investimento");
 
 formSimulador.addEventListener("submit", (event) => {
   event.preventDefault();
+  localStorage.setItem("valorInicial", valorInicial);
+  localStorage.setItem("aporteMensal", aporteMensal);
+  localStorage.setItem("taxa-juros", taxaJuros);
+  localStorage.setItem("tempoMeses", tempoMeses);
+
   const valorInicial = document.getElementById("valor-inicial").value;
   const aporteMensal = document.getElementById("aporte-mensal").value;
   const taxaJuros = document.getElementById("taxa-juros").value;
@@ -100,6 +119,6 @@ btnLimpar.addEventListener("click", () => {
   document.getElementById("barra-investido").style.width = "0%";
   document.getElementById("barra-juros").style.width = "0%";
 
-  const formSimulador = document.getElementById("form=investimento");
+  const formSimulador = document.getElementById("form-investimento");
   formSimulador.reset();
 });
