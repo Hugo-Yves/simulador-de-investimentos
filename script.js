@@ -21,6 +21,7 @@ if (tempoMesesSalvo)
 
 if (tabelaSalva) {
   corpoTabela.innerHTML = tabelaSalva;
+  document.getElementById('area-resultado').classList.remove('escondido')
 }
 
 if (graficoSalvo && graficoVisivel === "sim") {
